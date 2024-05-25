@@ -8,13 +8,12 @@ import (
 )
 
 func main() {
-	// Prompt the user for a password
+
 	fmt.Println("Enter a password to check its strength:")
 	reader := bufio.NewReader(os.Stdin)
 	password, _ := reader.ReadString('\n')
-	password = password[:len(password)-1] // Trim the newline character
+	password = password[:len(password)-1]
 
-	// Check the password strength
 	length := len(password)
 	hasUpper := false
 	hasLower := false
@@ -34,7 +33,6 @@ func main() {
 		}
 	}
 
-	// Evaluate the password strength
 	fmt.Println("Password strength evaluation:")
 	if length >= 8 {
 		fmt.Println("- Length: Pass")
@@ -66,7 +64,6 @@ func main() {
 		fmt.Println("- Special Character: Fail (must include at least one special character)")
 	}
 
-	// Determine overall strength
 	if length >= 8 && hasUpper && hasLower && hasDigit && hasSpecial {
 		fmt.Println("Overall Strength: Strong")
 	} else if length >= 6 && hasUpper && hasLower && (hasDigit || hasSpecial) {
