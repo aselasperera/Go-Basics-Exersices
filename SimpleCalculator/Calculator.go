@@ -8,7 +8,6 @@ func main() {
 	var num1, num2 float64
 	var operator string
 
-	// Ask the user for numbers and operator
 	fmt.Println("Enter the first number:")
 	fmt.Scanln(&num1)
 	fmt.Println("Enter the second number:")
@@ -16,10 +15,8 @@ func main() {
 	fmt.Println("Enter the operator (+, -, *, /):")
 	fmt.Scanln(&operator)
 
-	// Perform calculation based on the operator
 	result := calculate(num1, num2, operator)
 
-	// Print the result
 	fmt.Printf("Result: %.2f\n", result)
 }
 
